@@ -17,6 +17,7 @@ const db = new Pool({
 // Check if user exists
 app.get("/check-user", async (req, res) => {
   const { userEmail } = req.query;
+  console.log("userEmail ", userEmail);
   try {
     const result = await db.query(
       "SELECT 1 FROM messages WHERE useremail = $1 LIMIT 1",
